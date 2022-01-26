@@ -4,14 +4,12 @@ const Buyer = require('../models/buyermodel')
 
 const app = express()
 
-// const bodyParser = require('body-parser')
-// app.use(bodyParser.urlencoded({ extended: true }))
 
 // Getting All Buyers
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
     try {
-        const buyers = Buyer.find()
-        res.status(200).send(buyers.json)
+        const buyers = await Buyer.find()
+        res.json(buyers)
     }
     catch (err) {
         res.status(500).json({ message: err.message })
@@ -23,7 +21,7 @@ router.get('/', (req, res) => {
 router.get('/:id', async (req, res) => {
     try{
         const buyer = await Buyer.findById(req.params.id)
-        res.send(buyer.json)
+        res.status(200).json(buyer)
     }
     catch (err){
         res.status(500).json({ message: err.message })
@@ -51,11 +49,18 @@ router.post('/', async (req, res) => {
 
 // Updating One Buyer
 router.patch('/:id', async (req, res) => {
+    let updbuyer = await Buyer.findById(req.params.id)
+        if (req.body.name != null) {
+            res.updbuyer.name = req.body.name
+        }
+
+        if (req.body.items != null) {
+            res.updbuyer.items = req.body.items
+        }
+    
     try{
-        const updbuyer = await Buyer.findById(req.params.id)
-        updbuyer.items = req.items.body
-        const updated = await updbuyer.save()
-        res.status(201).send(updated.json)
+        const updated = await res.updbuyer.save()
+        res.json(updated)
     }
     catch(err) {
         res.status(400).json({ message: err.message })
@@ -68,10 +73,10 @@ router.delete('/:id', async (req, res) => {
     try{
         const removebuyer = await Buyer.findById(req.params.id)
         const removed = await removebuyer.delete()
-        res.status(201).send(removed.json)
+        res.json(removed)
     }
     catch (err) {
-        res.status(400).json({ message: err.message })
+        res.status(500).json({ message: err.message })
     }
 
 })
