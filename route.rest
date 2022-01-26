@@ -1,0 +1,28 @@
+GET http://localhost:2022/buyers
+
+###
+
+GET http://localhost:2022/buyers/61f16c2740efe42a28f7008f
+
+###
+
+POST  http://localhost:2022/buyers
+Content-Type: application/json
+
+{
+    "name": "Shahid",
+    "items": "Redgear Cosmo 7.1"
+}
+
+###
+
+PATCH http://localhost:2022/buyers/61f16c5040efe42a28f70091
+
+{
+    "name": "Shahid Parvez",
+    "items": "Redgear Cosmo 7.1"
+}
+
+###
+
+DELETE http://localhost:2022/buyers/61f16c5040efe42a28f70091
