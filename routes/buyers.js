@@ -51,15 +51,15 @@ router.post('/', async (req, res) => {
 router.patch('/:id', async (req, res) => {
     let updbuyer = await Buyer.findById(req.params.id)
         if (req.body.name != null) {
-            res.updbuyer.name = req.body.name
+            updbuyer.name = req.body.name
         }
 
         if (req.body.items != null) {
-            res.updbuyer.items = req.body.items
+            updbuyer.items = req.body.items
         }
     
     try{
-        const updated = await res.updbuyer.save()
+        const updated = await updbuyer.save()
         res.json(updated)
     }
     catch(err) {

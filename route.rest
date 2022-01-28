@@ -16,11 +16,11 @@ Content-Type: application/json
 
 ###
 
-PATCH http://localhost:2022/buyers/61f1747f2c5604a2c29fce6f
+PATCH http://localhost:2022/buyers/61f391b42bf5a8ac4a5cc6e6
 Content-Type: application/json
 
 {
-    "name": "Shahid Parvez",
+    "name": "Parvez",
     "items": "Redgear Cosmo 7.1"
 }
 
