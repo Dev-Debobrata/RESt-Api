@@ -5,18 +5,19 @@ GET http://localhost:2022/buyers
 GET http://localhost:2022/buyers/61f1747f2c5604a2c29fce6f
 
 ###
-
+ 
 POST  http://localhost:2022/buyers
 Content-Type: application/json
 
 {
-    "name": "Shahid",
-    "items": "Redgear Cosmo 7.1"
+    "name": "Mainak",
+    "items": "Philips Trimmer"
 }
 
 ###
 
 PATCH http://localhost:2022/buyers/61f1747f2c5604a2c29fce6f
+Content-Type: application/json
 
 {
     "name": "Shahid Parvez",
@@ -25,4 +26,4 @@ PATCH http://localhost:2022/buyers/61f1747f2c5604a2c29fce6f
 
 ###
 
-DELETE http://localhost:2022/buyers/61f1776c869715aa217afff9
+DELETE http://localhost:2022/buyers/61f196cafc64cd064a2f4a8e
