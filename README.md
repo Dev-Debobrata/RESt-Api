@@ -19,7 +19,7 @@ npm run dev
 ```
 
 ## Usage
-Point your browser at localhost:2021
+Point your browser at localhost:2022
 
 ##Testing
 A .rest file has been added to test the api. Install REST Client extension in VS Code to use it.
