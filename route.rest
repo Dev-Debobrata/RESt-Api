@@ -16,7 +16,7 @@ Content-Type: application/json
 
 ###
 
-PATCH http://localhost:2022/buyers/61f1747f2c5604a2c29fce6f
+PATCH http://localhost:2022/buyers/61f3819f2bf5a8ac4a5cc6de
 Content-Type: application/json
 
 {
@@ -26,4 +26,4 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:2022/buyers/61f196cafc64cd064a2f4a8e
+DELETE http://localhost:2022/buyers/61f391b42bf5a8ac4a5cc6e6
